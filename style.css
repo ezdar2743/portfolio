@@ -29,6 +29,9 @@
 
   /* Size */
   --size-border-radius: 4px;
+
+  /*Animation  */
+  --animation-duration: 300ms;
 }
 
 /* Universal Tag */
@@ -148,4 +151,73 @@ p {
   border: solid 2px var(--color-white);
   border-radius: var(--size-border-radius);
   color: var(--color-white);
+}
+
+/* Section Common */
+
+.section {
+  text-align: center;
+  padding: 50px;
+  max-width: 1200px;
+}
+
+/* About */
+
+.about__majors {
+  display: flex;
+  justify-content: space-between;
+  margin: 80px;
+}
+
+.major__icon {
+  width: 170px;
+  height: 170px;
+  border: 1px solid var(--color-blue);
+  border-radius: 50%;
+  color: var(--color-blue);
+
+  font-size: 70px;
+  line-height: 170px;
+}
+.major__icon i {
+  transition: all var(--animation-duration) ease;
+}
+
+.major__icon i:hover {
+  color: var(--color-pink);
+  transform: rotate(-15deg) scale(1.1);
+}
+.major__title {
+  font-weight: var(--weight-bold);
+  margin: 20px 0;
+  color: var(--color-grey);
+}
+
+/* Job */
+
+.job {
+  display: flex;
+  align-items: center;
+}
+
+.job__description {
+  margin: 0 16px;
+  text-align: left;
+}
+
+.job__name,
+.job__period {
+  color: var(--color-light-grey);
+}
+
+.job__name {
+  font-size: var(--font-small);
+}
+.job__period {
+  font-size: var(--font-micro);
+}
+
+.job__logo {
+  width: 70px;
+  height: 70px;
 }
