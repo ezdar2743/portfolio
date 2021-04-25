@@ -279,3 +279,43 @@ p {
 .skillset__right li {
   margin: 16px;
 }
+
+/* Work */
+
+/* Work */
+
+/* Testimonials */
+
+#testimonials {
+  background-color: var(--color-light-white);
+  margin: 40px;
+}
+
+.testimonial {
+  display: flex;
+  margin: 32px 0;
+}
+
+.testimonial__avarta {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.testimonial__avarta:first-child {
+  margin-right: 12px;
+}
+.testimonial__avarta:nth-child(2) {
+  margin-left: 12px;
+}
+.testimonial__speech {
+  padding: 15px;
+  background-color: var(--color-white);
+  border-radius: var(--size-border-radius);
+}
+
+.testimonial__speech p {
+  color: var(--color-light-grey);
+}
+.testimonial__speech a {
+  color: var(--color-pink);
+}
