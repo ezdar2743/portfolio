@@ -127,7 +127,7 @@ p {
 
 /* Home */
 #home {
-  background: url("/images/background3.png") center/cover no-repeat;
+  background: url("/Home/background3.png") center/cover no-repeat;
   padding: 40px;
   text-align: center;
 }
@@ -281,6 +281,94 @@ p {
 }
 
 /* Work */
+.work__categories {
+  margin: 40px;
+}
+
+.category__btn {
+  border: solid 1px var(--color-dark-white);
+  border-radius: var(--size-border-radius);
+  font-size: var(--font-reggular);
+  padding: 8px 48px;
+}
+
+.category__btn.active,
+.category__btn:hover {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+.category__count {
+  border: solid 1px var(--color-orange);
+  border-radius: 50%;
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  line-height: 24px;
+  position: relative;
+  top: -20px;
+  left: 4px;
+  opacity: 0;
+  transition: all var(--animation-duration) ease-in;
+}
+.category__btn.active .category__count,
+.category__btn:hover .category__count {
+  opacity: 1;
+  top: 0;
+}
+
+.work__projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project {
+  width: 280px;
+  height: 250px;
+  margin: 2px;
+  background-color: var(--color-light-white);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project__img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.project__destcription {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transition: all var(--animation-duration) ease-in;
+}
+.project:hover .project__destcription {
+  opacity: 0.7;
+}
+
+.project__destcription h3 {
+  color: var(--color-white);
+}
+
+.project__destcription h3:after {
+  content: " ";
+  position: relative;
+  display: flex;
+  left: 50%;
+  width: 25px;
+  height: 2px;
+  background-color: var(--color-dark-white);
+  margin-left: -12px;
+}
 
 /* Work */
 
