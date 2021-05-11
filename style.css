@@ -94,12 +94,19 @@ p {
 
 /* Navbar */
 #navbar {
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: var(--color-blue);
+  background-color: transparent;
   align-items: center;
   color: var(--color-white);
   padding: 16px;
+  transition: all var(--animation-duration) ease-in-out;
+}
+#navbar.navbar__dark {
+  background-color: var(--color-blue);
+  padding: 8px;
 }
 .navbar__menu {
   display: flex;
@@ -136,6 +143,7 @@ p {
 #home {
   background: url("/Home/background3.png") center/cover no-repeat;
   padding: 40px;
+  padding-top: 120px;
   text-align: center;
 }
 
@@ -172,6 +180,9 @@ p {
 }
 
 /* About */
+#about {
+  width: 100%;
+}
 
 .about__majors {
   display: flex;
