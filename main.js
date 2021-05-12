@@ -22,10 +22,9 @@ navbarMenu.addEventListener('click', (event) => {
     if(link == null){
         return;
     } else{
-        console.log(event.target.dataset.link)
+        scrollIntoView(link);
     }
-    const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({behavior : 'smooth' });
+    
     
 });
 
@@ -33,9 +32,13 @@ const contactMe = document.querySelector('.home__contact');
 contactMe.addEventListener('click',(event) => {
     const target = event.target;
     const link = target.dataset.link;
-    const scrollTo  = document.querySelector(link);
-    scrollTo.scrollIntoView({behavior: 'smooth'});
+    scrollIntoView('#contact');
 
     
 });
+
+function scrollIntoView(selector){
+    const scrollTo  = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior: 'smooth'});
+}
 
