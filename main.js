@@ -10,7 +10,7 @@ document.addEventListener('scroll',() =>{
     }else{
         navbar.classList.remove("navbar__dark")
     }
-})
+});
 
 //When I touch navbar, move sclrolling
 
@@ -28,3 +28,14 @@ navbarMenu.addEventListener('click', (event) => {
     scrollTo.scrollIntoView({behavior : 'smooth' });
     
 });
+
+const contactMe = document.querySelector('.home__contact');
+contactMe.addEventListener('click',(event) => {
+    const target = event.target;
+    const link = target.dataset.link;
+    const scrollTo  = document.querySelector(link);
+    scrollTo.scrollIntoView({behavior: 'smooth'});
+
+    
+});
+
