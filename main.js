@@ -58,6 +58,22 @@ arrowUp.addEventListener('click',() => {
     scrollIntoView('#home');
 });
 
+//Project
+const workBtn = document.querySelector('.work__categories');
+const projectLink = document.querySelectorAll('.project');
+console.log(projectLink)
+workBtn.addEventListener('click', (event) => {
+    const filter = event.target.parentNode.dataset.filter|| 
+    event.target.dataset.filter;
+ 
+    projectLink.forEach((project) =>{
+        if ( filter === '*' || filter === project.dataset.type){
+            project.classList.remove('invisible');
+        } else{
+            project.classList.add('invisible')
+        }
+    })
+})
 
 
 
