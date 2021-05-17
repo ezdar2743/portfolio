@@ -109,6 +109,7 @@ p {
   background-color: var(--color-blue);
   padding: 8px;
   z-index: 1;
+  display: flex;
 }
 .navbar__menu {
   display: flex;
@@ -136,7 +137,7 @@ p {
   background-color: var(--color-dark-blue);
   border-color: var(--color-white);
 }
-.navbar__hamburger__btn {
+.navbar__hamburger {
   position: absolute;
   right: 32px;
   font-size: 24px;
@@ -388,7 +389,7 @@ p {
 }
 
 .project__destcription h3 {
-  color: var(--color-white);
+  color: var(--color-orange);
 }
 
 .project__destcription h3:after {
@@ -396,10 +397,10 @@ p {
   position: relative;
   display: flex;
   left: 50%;
-  width: 25px;
+  width: 50px;
   height: 2px;
   background-color: var(--color-dark-white);
-  margin-left: -12px;
+  transform: translateX(-50%);
 }
 
 /* Work */
@@ -491,13 +492,14 @@ p {
   pointer-events: painted;
 }
 @media (max-width: 768px) {
-  .navbar__hamburger__btn {
+  .navbar__hamburger {
     display: block;
   }
   #navbar {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-blue);
   }
 
   .navbar__menu {
@@ -506,6 +508,10 @@ p {
     width: 100%;
     display: none;
   }
+  .navbar__menu.open {
+    display: block;
+  }
+
   .navbar__menu__item.active {
     border: none;
   }

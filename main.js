@@ -18,11 +18,12 @@ const navbarMenu = document.querySelector('.navbar__menu');
 
 navbarMenu.addEventListener('click', (event) => {
     const target= event.target;
-    const link =  target.dataset.link
+    const link =  target.dataset.link; 
     
     const menuActive = document.querySelector('.navbar__menu__item.active');
     menuActive.classList.remove('active');
     target.classList.add('active');
+    navbarMenu.classList.remove('open');
     
     
     if(link == null){
@@ -34,11 +35,24 @@ navbarMenu.addEventListener('click', (event) => {
     
 });
 
+//Navbar hamburger button for smartphon
+
+const navbarHamburger = document.querySelector('.navbar__hamburger');
+    navbarHamburger.addEventListener('click',() =>{
+    
+        navbarMenu.classList.toggle('open');
+        
+    })
+
+
+
+
 const contactMe = document.querySelector('.home__contact');
 contactMe.addEventListener('click',(event) => {
     const target = event.target;
     const link = target.dataset.link;
     scrollIntoView('#contact');
+    
 
     
 });
