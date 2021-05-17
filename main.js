@@ -19,7 +19,10 @@ const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) => {
     const target= event.target;
     const link =  target.dataset.link
-    const menuItem = document.querySelector('.navbar__menu__item');
+    
+    const menuActive = document.querySelector('.navbar__menu__item.active');
+    menuActive.classList.remove('active');
+    target.classList.add('active');
     
     
     if(link == null){
@@ -70,8 +73,14 @@ workBtn.addEventListener('click', (event) => {
     const filter = event.target.parentNode.dataset.filter|| 
     event.target.dataset.filter;
 
-    projectBox.classList.add('animation');
+    //project button set.
+    const active = document.querySelector('.category__btn.active');
+    active.classList.remove('active');
+    event.target.parentNode.classList.add('active')
+    ||event.target.classList.add('active');
     
+    
+    projectBox.classList.add('animation');
     setTimeout(() => {
         projectLink.forEach((project) =>{
             if ( filter === '*' || filter === project.dataset.type){
