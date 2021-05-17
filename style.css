@@ -104,6 +104,7 @@ p {
   padding: 16px;
   transition: all var(--animation-duration) ease-in-out;
 }
+
 #navbar.navbar__dark {
   background-color: var(--color-blue);
   padding: 8px;
@@ -111,6 +112,10 @@ p {
 }
 .navbar__menu {
   display: flex;
+}
+
+.navbar__menu__item.active {
+  border: 1px solid var(--color-white);
 }
 
 .navbar_logo {
@@ -123,14 +128,12 @@ p {
   padding: 8px 16px;
   cursor: pointer;
   border-radius: var(--size-border-radius);
-}
-
-.navbar__menu__item.active {
-  border: 1px solid var(--color-white);
+  border: 1px solid transparent;
 }
 
 .navbar__menu__item:hover {
   background-color: var(--color-dark-blue);
+  border-color: var(--color-white);
 }
 .navbar__hamburger__btn {
   position: absolute;
@@ -341,6 +344,12 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  transition: all var(--animation-duration) ease-out;
+  opacity: 1;
+}
+.work__projects.animation {
+  opacity: 0;
+  transform: scale(0.96) translateY(40px);
 }
 
 .project {

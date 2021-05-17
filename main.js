@@ -19,6 +19,9 @@ const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) => {
     const target= event.target;
     const link =  target.dataset.link
+    const menuItem = document.querySelector('.navbar__menu__item');
+    
+    
     if(link == null){
         return;
     } else{
@@ -60,20 +63,35 @@ arrowUp.addEventListener('click',() => {
 
 //Project
 const workBtn = document.querySelector('.work__categories');
+const projectBox = document.querySelector('.work__projects');
 const projectLink = document.querySelectorAll('.project');
-console.log(projectLink)
+
 workBtn.addEventListener('click', (event) => {
     const filter = event.target.parentNode.dataset.filter|| 
     event.target.dataset.filter;
- 
-    projectLink.forEach((project) =>{
-        if ( filter === '*' || filter === project.dataset.type){
-            project.classList.remove('invisible');
-        } else{
-            project.classList.add('invisible')
-        }
-    })
-})
+
+    projectBox.classList.add('animation');
+    
+    setTimeout(() => {
+        projectLink.forEach((project) =>{
+            if ( filter === '*' || filter === project.dataset.type){
+                project.classList.remove('invisible');
+            } else{
+                project.classList.add('invisible')
+            }
+        });
+
+        projectBox.classList.remove('animation');
+    }, 300);
+
+
+    
+
+});
+
+
+
+
 
 
 
