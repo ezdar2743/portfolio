@@ -18,12 +18,13 @@ const navbarMenu = document.querySelector('.navbar__menu');
 
 navbarMenu.addEventListener('click', (event) => {
     const target= event.target;
-    const link =  target.dataset.link; 
-    
+    const link =  target.dataset.link;
     const menuActive = document.querySelector('.navbar__menu__item.active');
+    
     menuActive.classList.remove('active');
     target.classList.add('active');
     navbarMenu.classList.remove('open');
+    
     
     
     if(link == null){
@@ -48,10 +49,14 @@ const navbarHamburger = document.querySelector('.navbar__hamburger');
 
 
 const contactMe = document.querySelector('.home__contact');
+
 contactMe.addEventListener('click',(event) => {
     const target = event.target;
     const link = target.dataset.link;
+    
+    
     scrollIntoView('#contact');
+
     
 
     

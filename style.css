@@ -175,6 +175,10 @@ p {
   color: var(--color-white);
 }
 
+.home__contact:hover {
+  color: var(--color-white);
+  background-color: var(--color-dark-blue);
+}
 /* Section Commond */
 
 .section {
@@ -492,6 +496,15 @@ p {
   pointer-events: painted;
 }
 @media (max-width: 768px) {
+  :root {
+    /* Font Size */
+    --font-large: 40px;
+    --font-medium: 24px;
+    --font-reggular: 14px;
+    --font-small: 12px;
+    --font-micro: 10px;
+  }
+
   .navbar__hamburger {
     display: block;
   }
@@ -524,13 +537,29 @@ p {
   .skillset {
     flex-direction: column;
   }
+  .section {
+    padding: 16px 24px;
+  }
 
   .project {
     flex-grow: 1;
   }
-
+  #testimonials {
+    margin: 0;
+  }
+  .testimonial {
+    margin: 48px 0;
+  }
   .testimonial__avarta {
     width: 80px;
     height: 80px;
+  }
+  .category__btn {
+    padding: 8px 8px;
+  }
+  .arrowUp {
+    bottom: 12px;
+    right: 12px;
+    font-size: 30px;
   }
 }
