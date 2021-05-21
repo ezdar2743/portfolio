@@ -21,8 +21,6 @@ navbarMenu.addEventListener('click', (event) => {
     const link =  target.dataset.link;
     const menuActive = document.querySelector('.navbar__menu__item.active');
     
-    menuActive.classList.remove('active');
-    target.classList.add('active');
     navbarMenu.classList.remove('open');
     
     
@@ -31,6 +29,7 @@ navbarMenu.addEventListener('click', (event) => {
         return;
     } else{
         scrollIntoView(link);
+        
     }
     
     
@@ -111,10 +110,6 @@ workBtn.addEventListener('click', (event) => {
 
         projectBox.classList.remove('animation');
     }, 300);
-
-
-    
-
 });
 
 
@@ -122,12 +117,67 @@ workBtn.addEventListener('click', (event) => {
 
 
 
+//When navbar scroll, highlight
 
+const sectionIds = [
+    '#home',
+    '#about', 
+    '#skills', 
+    '#work', 
+    '#testimonials', 
+    '#contact'];
 
+const sections = sectionIds.map((id) => document.querySelector(id));
+const navItems = sectionIds.map((id)=> document.querySelector(`[data-link="${id}"]`));
 
-//function
+//select function
+let selectedActive = navItems[0];
+let selectedNavIndex =0;
+
+function selectNavItem(select){
+            selectedActive.classList.remove('active');
+            selectedActive = select
+            selectedActive.classList.add('active');
+        
+}
+//Scroll function
 function scrollIntoView(selector){
     const scrollTo  = document.querySelector(selector);
     scrollTo.scrollIntoView({behavior: 'smooth'});
+    selectNavItem(navItems[sectionIds.indexOf(selector)])
 }
+
+const observerOption = {
+    threshold:0.3,
+}
+
+const observerCallback = (entries,obsever)=>{
+    entries.forEach((entry)=>{
+        if (!entry.isIntersecting && entry.intersectionRatio > 0){
+            const index = sectionIds.indexOf(`#${entry.target.id}`);
+            
+            if(entry.boundingClientRect.y <0) {
+                selectedNavIndex = index + 1;
+
+            }else { 
+                selectedNavIndex = index - 1;
+            }
+            
+            
+
+        };
+    });
+};
+
+    
+const observer = new IntersectionObserver(observerCallback, observerOption);
+sections.forEach((section) => {observer.observe(section)});
+
+window.addEventListener('wheel',() => {
+    
+    selectNavItem(navItems[selectedNavIndex]);
+})
+
+
+
 
