@@ -146,7 +146,7 @@ p {
 
 /* Home */
 #home {
-  background: url("/Home/background3.png") center/cover no-repeat;
+  background: url("images/background3.png") center/cover no-repeat;
   padding: 40px;
   padding-top: 120px;
   text-align: center;
