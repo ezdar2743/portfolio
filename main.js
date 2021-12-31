@@ -114,9 +114,6 @@ workBtn.addEventListener('click', (event) => {
 
 
 
-
-
-
 //When navbar scroll, highlight
 
 const sectionIds = [
