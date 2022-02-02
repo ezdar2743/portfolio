@@ -584,6 +584,16 @@ p {
   .navbar__menu__item.active {
     border: none;
   }
+/* home */
+  .home__avartar{
+    display: none;
+  }
+  
+  .home__discription,
+  .home__contact{
+    
+    font-size: 20px;
+  }
 
   .about__majors {
     flex-direction: column;
@@ -618,4 +628,5 @@ p {
     right: 12px;
     font-size: 30px;
   }
+
 }
