@@ -44,10 +44,23 @@ const navbarHamburger = document.querySelector('.navbar__hamburger');
         
     })
 
-
-
-
-const contactMe = document.querySelector('.home__contact');
+//home animation
+let title = document.querySelector('.home__title');
+let text = document.querySelector('.home__discription');
+let contactMe = document.querySelector('.home__contact');
+window.addEventListener('scroll',function(){
+    let value = window.scrollY;
+    if(value>100){
+        title.style.animation='back 2s ease-out'
+        text.style.animation='back 2s ease-out'
+        contactMe.style.animation='back 2s ease-out'
+    }
+    else{
+        title.style.animation='slide 2s ease-out'
+        text.style.animation='slide 2s ease-out'
+        contactMe.style.animation='slide 2s ease-out'
+    }
+})
 
 contactMe.addEventListener('click',(event) => {
     const target = event.target;
